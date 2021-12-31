@@ -19,21 +19,27 @@ function computerPlay(){
 function round(playerSelection, computerSelection){
     playerChoice = playerSelection.toLowerCase();
     
-    if(playerSelection==="rock"&&computerSelection==="scissor"){
-        console.log("You win. Rock beats Scissors");  
-    }else if(playerSelection==="scissors"&&computerSelection==="paper"){
-        console.log("You win. Scissors beats Paper");
-    }else if(playerSelection==="paper"&&computerSelection==="rock"){
-        console.log("You win. Paper beats rock");
-    }else if(playerSelection==="rock"&&computerSelection==="paper"){
-        console.log("You lose. Paper beats rock.")
-    }else if(playerSelection==="scissors"&&computerSelection==="rock"){
-        console.log("You lose. Rock beats scissors");
-    }else if(playerSelection==="paper"&&computerSelection==="scissors"){
-        console.log("You lose. Scissors beats paper");
-    }else if(playerSelection===computerSelection){
-        console.log("Tie");
+    if(playerChoice==="rock"&&computerSelection==="scissors"){
+        return "You win. Rock beats Scissors";  
+    }else if(playerChoice==="scissors"&&computerSelection==="paper"){
+        return "You win. Scissors beats Paper";
+    }else if(playerChoice==="paper"&&computerSelection==="rock"){
+        return "You win. Paper beats rock";
+    }else if(playerChoice==="rock"&&computerSelection==="paper"){
+        return "You lose. Paper beats rock.";
+    }else if(playerChoice==="scissors"&&computerSelection==="rock"){
+        return "You lose. Rock beats scissors";
+    }else if(playerChoice==="paper"&&computerSelection==="scissors"){
+        return "You lose. Scissors beats paper";
+    }else if(playerChoice===computerSelection){
+        return "Tie";
     }else{
-        console.log("Error");
+        return "Error";
+    }
+}
+
+function game(){
+    for(let i=0;i<5;i++){
+       console.log(round(prompt("Enter your choice"), computerPlay()));
     }
 }
